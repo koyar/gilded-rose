@@ -12,8 +12,8 @@ export class GildedRose {
 
     updateQuality() {
         this.items = this.items.map( 
-            (item: Item) =>  UpdateQuality.groceryItem(item))
-            .map(i => <Item>i);
+            (item: Item) =>  UpdateQuality.groceryItem(item).init())
+            .map(i => i);
 
         // this.items.forEach(item => {
         //     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {

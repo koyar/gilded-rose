@@ -1,12 +1,13 @@
-import { Item } from './item';
 
-export const AgedBrie = (item) :Item => {
+import { CommonLogic } from "./CommonLogic";
 
-    const increaseQuality = quality => (quality < 50)  ? quality + 1 : quality
+export class AgedBrie extends CommonLogic {
 
-    item.quality = increaseQuality(item.quality)
-    item.quality = item.sellIn < 0 ? increaseQuality(item.quality) : item.quality
-    item.sellIn -= 1;
+    constructor(name: string, quality: number, sellIn: number) {
+        super(name, quality, sellIn);
+    }
 
-    return item;
+    getQualityValue (): number {
+        return (this.sellIn <=0) ? 2 : 1;
+    }
 }
