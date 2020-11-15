@@ -1,6 +1,6 @@
 
 import { Item } from './Item';
-import { AgedBrie } from './AgedBrie';
+import { UpdateQuality } from './UpdateQuality';
 
 
 export class GildedRose {
@@ -11,10 +11,11 @@ export class GildedRose {
     }
 
     updateQuality() {
-        this.items.forEach(item => {
-            if (item.name === 'Aged Brie') {
-                item = AgedBrie(item);
-            }
+        this.items = this.items.map( 
+            (item: Item) =>  UpdateQuality.groceryItem(item))
+            .map(i => <Item>i);
+
+        // this.items.forEach(item => {
         //     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
         //         if (item.quality > 0) {
         //             if (item.name != 'Sulfuras, Hand of Ragnaros') {
@@ -60,7 +61,7 @@ export class GildedRose {
         //             }
         //         }
         //     }
-        });
+        // });
 
         return this.items;
     }
