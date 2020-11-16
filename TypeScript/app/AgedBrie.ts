@@ -8,6 +8,7 @@ export class AgedBrie extends CommonLogic {
     }
 
     getQualityValue (): number {
+        // Aged Brie quality increases twice as fast once the sell by date has passed or 0.
         return (this.sellIn <=0) ? 2 : 1;
     }
 }

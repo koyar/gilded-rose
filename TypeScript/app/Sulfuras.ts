@@ -11,5 +11,6 @@ export class Sulfuras extends CommonLogic {
         return 0;
     }
 
+    // Override the method as this item never needs to be sold or has decrease in quality
     increaseQuality() {}
 }

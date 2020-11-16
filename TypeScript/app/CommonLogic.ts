@@ -16,7 +16,7 @@ export class CommonLogic {
         this.qualityValue = this.getQualityValue();
         this.increaseQuality();
 
-        return <Item>{
+        return <Item> {
             name: this.name,
             sellIn: this.sellIn,
             quality: this.quality
@@ -24,6 +24,7 @@ export class CommonLogic {
     }
 
     getQualityValue(): number {
+        // Normal items
         if (this.sellIn <= 0) {
             this.qualityValue = -2;
         }
@@ -31,12 +32,13 @@ export class CommonLogic {
     }
 
     increaseQuality () {
+        // Quality should never go above 50
         if (this.quality >= 50) {
             this.quality = 50;
         } else {
             this.quality = this.quality + this.qualityValue;
         }
-
+        // Quality of item is never negative
         if (this.quality < 0) {
             this.quality = 0;
         }
