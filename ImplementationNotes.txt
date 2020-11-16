@@ -1,0 +1,32 @@
+====================================
+Implementation Notes - TypeScript
+====================================
+
+Step 1 - Breakdown requirements by drawing a diagram of the different scenarios
+
+Step 2 - Write unit tests against the instructions and the code. 
+- One issue I found was the instructions did not have any indication that once the sell by date of aged brie had been reached it actually degraded
+  twice as fast. Ensure the 100% test were passing.
+
+Step 3 - Extracted the item class into its own file, I felt it was cleaner to do this based on the requirements and diagram. I also thought about
+future proofing rather than having it all in one file which could become difficult to read. 
+
+Step 4 - Refactored the for loop to become a forEach just to tidy the code up a little.
+
+Step 5 - Start refactor, I commented out the large legacy code and added a file called AgedBrie that I ensured still passed the tests (not skipped test) that had been written.
+
+Step 6 - Created a new file called UpdateQuantity that had a static method with a switch statement to call the correct method based on item. 
+Aged Brie was added in here and removed from gilded-rose.ts. The forEach becomes a map to loop through each item.
+
+Step 7 - Created a new CommonLogic file that does the necessary calculations on sellIn and quality for items, made some of the methods public as they
+need to be available to the class the extends it. E.g. AgedBrie the quality needs to degrade twice as fast when sell by date is reached. 
+
+Step 8 - Added the Backstage file and uncommented the unit test to ensure they passed.
+
+Step 9 - Added test for Sulfaras as this hadn't been added in Step 2 as it the test was failing.
+
+Step 10 - Added Sulfaras method and ensure it passed the tests that had been written. 
+
+Step 11/Step12 - Added tests and method for Conjured items and code clean up and some comments.
+
+Step 13 - Extracted tests into individual files - again to future proof and to make it cleaner.
