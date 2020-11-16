@@ -1,8 +1,9 @@
 import { Item } from "./Item";
+import { CommonLogic } from "./CommonLogic";
 import { AgedBrie } from "./AgedBrie";
 import { BackStage } from "./BackStage";
 import { Sulfuras } from "./Sulfuras";
-import { CommonLogic } from "./CommonLogic";
+import { Conjured } from "./Conjured";
 
 export class UpdateQuality {
     static groceryItem(item: Item): CommonLogic {
@@ -14,6 +15,8 @@ export class UpdateQuality {
                 return new BackStage(name, sellIn, quality);
             case 'Sulfuras, Hand of Ragnaros':
                 return new Sulfuras(name, sellIn, quality);
+            case 'Conjured':
+                return new Conjured(name, sellIn, quality);
             default: 
                 return new CommonLogic(name, sellIn, quality);
         }

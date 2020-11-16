@@ -209,7 +209,7 @@ describe('Sulfuras legendary case', () => {
 
 
 describe('Conjured', () => {
-    it('should degrade quality twice as fast as standard items', () => {
+    it('should degrade quality twice as fast as normal items', () => {
         const storeItems = [
             new Item('Conjured', 5, 10)
         ];
