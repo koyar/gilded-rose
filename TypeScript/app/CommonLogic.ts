@@ -4,7 +4,7 @@ export class CommonLogic {
     protected name: string;
     protected sellIn: number;
     protected quality: number;
-    protected qualityOperator: number = -1;
+    private qualityValue: number = -1;
 
     private sellInOperator: number = -1;
 
@@ -16,7 +16,7 @@ export class CommonLogic {
     
 
     init(): Item {
-        this.qualityOperator = this.getQualityValue();
+        this.qualityValue = this.getQualityValue();
         this.increaseQuality();
         this.sellIn +=-1;
 
@@ -28,16 +28,21 @@ export class CommonLogic {
     }
 
     getQualityValue(): number {
-        return 1;
+        if (this.sellIn <= 0) {
+            this.qualityValue = -2;
+        }
+        return this.qualityValue;
     }
 
     private increaseQuality () {
         if (this.quality >= 50) {
             this.quality = 50;
-        } else if (this.quality < 0) {
-            this.quality = 0;
         } else {
-            this.quality = this.quality + this.qualityOperator;
+            this.quality = this.quality + this.qualityValue;
         }
+
+        if (this.quality < 0) {
+            this.quality = 0;
+        } 
     }
 }

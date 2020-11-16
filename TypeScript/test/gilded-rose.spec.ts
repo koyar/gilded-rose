@@ -6,7 +6,7 @@ import { GildedRose } from '../app/gilded-rose';
 
 describe('Gilded Rose', () => {
 
-    it.skip('should foo', () => {
+    it('should foo', () => {
         const gildedRose = new GildedRose([ new Item('foo', 0, 0) ]);
         const items = gildedRose.updateQuality();
         expect(items[0].name).to.equal('foo');
@@ -37,7 +37,7 @@ describe('Gilded Rose', () => {
 
 describe('quality', () => {
 
-    it.skip('should degrade the quality twice as fast when when the sellIn date has passed', () => {
+    it('should degrade the quality twice as fast when when the sellIn date has passed', () => {
         const storeItems = [
             new Item('+5 Dexterity Vest', 0, 2)
         ];
@@ -51,7 +51,7 @@ describe('quality', () => {
         expect(items).to.eql(expectedResult);
     });
 
-    it.skip('should never return quantity of below 0 for normal items', () => {
+    it('should never return quantity of below 0 for normal items', () => {
         const storeItems = [
             new Item('+5 Dexterity Vest', 5, 0)
         ];
@@ -114,7 +114,7 @@ describe('Aged Brie quality', () => {
 });
 
 describe('Backstage pass quality', () => {
-    it.skip('should increase quality of backstage when sell in value approaches', () => {
+    it('should increase quality of backstage when sell in value approaches', () => {
         const storeItems = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 20, 0)
         ];
@@ -129,7 +129,7 @@ describe('Backstage pass quality', () => {
         expect(items).to.eql(expectedResult);
     });
 
-    it.skip('should increase quality of backstage by 2 when there are less than 11 days', () => {
+    it('should increase quality of backstage by 2 when there are less than 11 days', () => {
         const storeItems = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 8, 0)
         ];
@@ -144,7 +144,7 @@ describe('Backstage pass quality', () => {
         expect(items).to.eql(expectedResult);
     });
 
-    it.skip('should increase quality of backstage by 3 when there are less than 6 days', () => {
+    it('should increase quality of backstage by 3 when there are less than 6 days', () => {
         const storeItems = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 4, 0)
         ];
@@ -159,7 +159,7 @@ describe('Backstage pass quality', () => {
         expect(items).to.eql(expectedResult);
     });
 
-    it.skip('should set quality of backstage to 0 after the concert', () => {
+    it('should set quality of backstage to 0 after the concert', () => {
         const storeItems = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 0, 5)
         ];
@@ -173,6 +173,6 @@ describe('Backstage pass quality', () => {
         
         expect(items).to.eql(expectedResult);
     });
-})
+});
 
 
