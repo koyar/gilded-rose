@@ -175,4 +175,21 @@ describe('Backstage pass quality', () => {
     });
 });
 
+describe('Sulfuras special case', () => {
+    it('should always have a quality of 80', () => {
+        const storeItems = [
+            new Item('Sulfuras, Hand of Ragnaros', 5, 10)
+        ];
+
+        const expectedResult = [
+            new Item('Sulfuras, Hand of Ragnarost', 5, 80)
+        ];
+
+        const gildedRose = new GildedRose(storeItems);
+        const items = gildedRose.updateQuality();
+        
+        expect(items).to.eql(expectedResult);
+    });
+});
+
 
