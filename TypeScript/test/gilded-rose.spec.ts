@@ -175,7 +175,7 @@ describe('Backstage pass quality', () => {
     });
 });
 
-describe('Sulfuras special case', () => {
+describe('Sulfuras legendary case', () => {
     it('should expect the quality to always increase to 80', () => {
         const storeItems = [
             new Item('Sulfuras, Hand of Ragnaros', 5, 10)
@@ -208,3 +208,19 @@ describe('Sulfuras special case', () => {
 });
 
 
+describe('Conjured', () => {
+    it('should degrade quality twice as fast as standard items', () => {
+        const storeItems = [
+            new Item('Conjured', 5, 10)
+        ];
+
+        const expectedResult = [
+            new Item('Conjured', 4, 8)
+        ];
+
+        const gildedRose = new GildedRose(storeItems);
+        const items = gildedRose.updateQuality();
+        
+        expect(items).to.eql(expectedResult);
+    });
+});

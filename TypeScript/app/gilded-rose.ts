@@ -19,19 +19,19 @@ export class GildedRose {
         //     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
         //         if (item.quality > 0) {
         //             if (item.name != 'Sulfuras, Hand of Ragnaros') {
-        //                 item.quality = item.quality - 1
+        //                 item.quality = item.quality - 1 // Conjured and standard
         //             }
         //         }
         //     }
         //     if (item.name != 'Sulfuras, Hand of Ragnaros') {
-        //         item.sellIn = item.sellIn - 1;
+        //         item.sellIn = item.sellIn - 1; // Brie, BAckstage, standard and Conjured
         //     }
         //     if (item.sellIn < 0) {
         //         if (item.name != 'Aged Brie') {
         //             if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
         //                 if (item.quality > 0) {
         //                     if (item.name != 'Sulfuras, Hand of Ragnaros') {
-        //                         item.quality = item.quality - 1
+        //                         item.quality = item.quality - 1 // standard and conjured
         //                     }
         //                 }
         //             }
