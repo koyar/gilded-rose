@@ -6,19 +6,15 @@ export class CommonLogic {
     protected quality: number;
     private qualityValue: number = -1;
 
-    private sellInOperator: number = -1;
-
     constructor(name:string, sellIn: number, quality: number) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
     
-
     init(): Item {
         this.qualityValue = this.getQualityValue();
         this.increaseQuality();
-        this.sellIn +=-1;
 
         return <Item>{
             name: this.name,
@@ -34,7 +30,7 @@ export class CommonLogic {
         return this.qualityValue;
     }
 
-    private increaseQuality () {
+    increaseQuality () {
         if (this.quality >= 50) {
             this.quality = 50;
         } else {
@@ -43,6 +39,8 @@ export class CommonLogic {
 
         if (this.quality < 0) {
             this.quality = 0;
-        } 
+        }
+
+        this.sellIn +=-1;
     }
 }

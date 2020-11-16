@@ -29,7 +29,7 @@ Pretty simple, right? Well this is where it gets interesting:
 - The Quality of an item is never negative - test added
 - "Aged Brie" actually increases in Quality the older it gets - test added
 - The Quality of an item is never more than 50 - test added
-- "Sulfuras", being a legendary item, never has to be sold or decreases in Quality - failing test
+- "Sulfuras", being a legendary item, never has to be sold or decreases in Quality - test added
 - "Backstage passes", like aged brie, increases in Quality as its SellIn value approaches - test added
 - Quality increases by 2 when there are 10 days or less - test added
 - Quality increases by 3 when there are 5 days or less - test added

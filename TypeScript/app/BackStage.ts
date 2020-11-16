@@ -3,8 +3,8 @@ import { CommonLogic } from "./CommonLogic";
 
 export class BackStage extends CommonLogic {
 
-    constructor(name: string, quality: number, sellIn: number) {
-        super(name, quality, sellIn);
+    constructor(name: string, sellIn: number, quality: number) {
+        super(name, sellIn, quality);
     }
 
     getQualityValue (): number {
